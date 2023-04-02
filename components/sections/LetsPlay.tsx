@@ -2,8 +2,21 @@ import { Box, Container, Stack, Typography } from "@mui/material"
 import Youtube from "../utilities/Youtube"
 import React from "react"
 import ImageCard from "../utilities/ImageCard"
+import useIsSmallScreen from "@/hooks/useIsSmallScreen"
 
 const LetsPlay: React.FC = () => {
+    const isSmallScreen = useIsSmallScreen();
+
+    if(isSmallScreen){
+        return (
+            <Box sx={{ bgcolor: 'secondary.main', p: 3}}>
+                <Typography variant="h2" color='primary.contrastText' sx={{ m: 1, mt: 3 }}>
+                    Let&apos;s Play Series
+                </Typography>
+            </Box>
+        );
+    }
+
     return (
         <Box sx={{ bgcolor: 'secondary.main', p: 3}}>
             <Typography variant="h2" color='primary.contrastText' sx={{ m: 1, mt: 3 }}>
