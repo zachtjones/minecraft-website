@@ -1,6 +1,6 @@
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Box, Button, Typography } from '@mui/material'
-import Link from 'next/link'; 
+import { Box, Button } from '@mui/material'
+
 interface WatchNowProps {
     url?: URL;
 }
@@ -8,9 +8,9 @@ interface WatchNowProps {
 const WatchNowButton: React.FC<WatchNowProps> = ({url: href = 'https://www.youtube.com/@zacari_mc'}) => {
     return (
         <Box sx={{margin: '10px 0px'}}>
-            <Button variant="contained" href={href.toString()}>
+            <Button variant="contained" href={href.toString()} target='_blank'>
             <YouTubeIcon sx={{ marginRight: '5px'}} />
-            Watch Now
+                Watch Now
             </Button>
         </Box>
     )
