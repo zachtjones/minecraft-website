@@ -14,6 +14,7 @@ function SkyBlock() {
             alt={`SkyBlock Episode ${number} Thumbnail`}
             position='left'
             aspect='5/4'
+            linkTo={new URL('https://www.youtube.com/@zacari_mc')}
         />
        </Grid>
     )

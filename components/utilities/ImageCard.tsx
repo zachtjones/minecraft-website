@@ -1,6 +1,4 @@
-import { Stack, Container, Card, CardMedia, CardContent } from "@mui/material"
-import { Box } from "@mui/system"
-import Image from "next/image"
+import { Card, CardMedia } from "@mui/material"
 import React, { PropsWithChildren } from "react"
 
 type propTypes = {
@@ -8,13 +6,27 @@ type propTypes = {
     alt: string, 
     position: string,
     aspect: '4/5' | '1/1' | '16/9' | '5/4',
+    linkTo?: URL;
 }
 
-const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position, aspect, children }) => {
+const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position, aspect, children, linkTo }) => {
+
+    const handleOnClick = () => {
+        if(linkTo){
+            window.open(linkTo, "_blank");
+        }
+    }
+
     return (
-        <Card>
-            <CardMedia image={src} title={alt}  sx={{ aspectRatio: aspect, backgroundPosition: position }}>
-                {children}
+        <Card onClick={handleOnClick}>
+            <CardMedia 
+                image={src} 
+                title={alt}  
+                sx={{ aspectRatio: aspect, backgroundPosition: position, cursor: linkTo ? 'pointer' : 'default' }}
+            >
+                <div>
+                    {children}
+                </div>
             </CardMedia>
         </Card>
         
