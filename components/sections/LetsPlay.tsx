@@ -1,4 +1,4 @@
-import { Box, Container, Grid, ImageList, ImageListItem, Stack, Typography } from "@mui/material"
+import { Avatar, Box, Chip, Container, Grid, ImageList, ImageListItem, Stack, Typography } from "@mui/material"
 import Youtube from "../utilities/Youtube"
 import React from "react"
 import ImageCard from "../utilities/ImageCard"
@@ -27,7 +27,13 @@ const LetsPlay: React.FC = () => {
                             position={episode.imagePosition || 'center'}
                             aspect='4/5'
                             linkTo={new URL(episode.url)}
-                        />
+                            customChildStyle={{display: 'flex', justifyContent: 'flex-start', alignItems :'flex-start', flexDirection: 'column'}}
+                        >
+                            <Stack direction={"row"} spacing={"5px"} sx={{p: 2, alignItems: 'center'}}>
+                                <Avatar alt="Me" src="/images/zacari.png" />
+                                <Chip label={episode.name} color="primary" size="medium" sx={{borderBottomLeftRadius: "0px"}}/>
+                            </Stack>
+                        </ImageCard>
                     </ImageListItem>
                 ))}
             </ImageList>

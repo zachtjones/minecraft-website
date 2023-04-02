@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardMedia } from "@mui/material"
+import { Card, CardActionArea, CardMedia, SxProps } from "@mui/material"
 import React, { PropsWithChildren } from "react"
 
 type propTypes = {
@@ -7,9 +7,10 @@ type propTypes = {
     position: string,
     aspect: '4/5' | '1/1' | '16/9' | '5/4',
     linkTo?: URL;
+    customChildStyle?: SxProps; 
 }
 
-const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position: backgroundPosition, aspect: aspectRatio, children, linkTo }) => {
+const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position: backgroundPosition, aspect: aspectRatio, children, linkTo, customChildStyle }) => {
 
     const handleOnClick = () => {
         if(linkTo){
@@ -24,7 +25,9 @@ const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position:
     }
 
     const displayChildrenCenterStyles = {
-        display: 'flex', justifyContent: 'center', alignItems :'center', flexDirection: 'column'
+        ...customChildStyle || { 
+            display: 'flex', justifyContent: 'center', alignItems :'center', flexDirection: 'column' 
+        }
     }
 
 
