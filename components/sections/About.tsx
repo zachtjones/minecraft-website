@@ -27,7 +27,7 @@ function About() {
                         Hi! I make videos on YouTube showing cool redstone contraptions, farms, and bases in Minecraft.
                     </Typography>
                     <Typography variant="body1" component='div' color='white' sx={{ mt: 2 }}>
-                        Currently, I@apos;m working on two series, a survival let@apos;s play and a survival skyblock world.
+                        Currently, I&apos;m working on two series, a survival let&apos;s play and a survival skyblock world.
                     </Typography>
                 </Box>
             </Box>
