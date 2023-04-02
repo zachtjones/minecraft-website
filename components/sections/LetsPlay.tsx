@@ -3,6 +3,7 @@ import Youtube from "../utilities/Youtube"
 import React from "react"
 import ImageCard from "../utilities/ImageCard"
 import useIsSmallScreen from "@/hooks/useIsSmallScreen"
+import WatchNowButton from "../utilities/WatchNowButton"
 
 const LetsPlay: React.FC = () => {
     const isSmallScreen = useIsSmallScreen();
@@ -21,6 +22,7 @@ const LetsPlay: React.FC = () => {
         <Box sx={{ bgcolor: 'secondary.main', p: 3}}>
             <Typography variant="h2" color='primary.contrastText' sx={{ m: 1, mt: 3 }}>
                 Let&apos;s Play Series
+                <WatchNowButton url={new URL("https://www.youtube.com/playlist?list=PLNXoRRqPgxuhiYXNaMbj0tmOYx3Vkn-fl")} inline />
             </Typography>
 
             <Stack spacing={2} direction={{ sm: 'column', md: 'row'}} sx={{ p: 2 }}>
