@@ -1,6 +1,7 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Button, Typography } from "@mui/material"
 import Image from "next/image"
 import Youtube from "../utilities/Youtube"
+import WatchNowButton from "../utilities/WatchNowButton"
 
 const LATEST_EPISODE = 4
 
@@ -60,6 +61,7 @@ function SkyBlock() {
                     <Typography variant="body1" sx={{ mt: 2 }}>
                         Starting out with a single tree and some grass, let&apos;s see what I can do!
                     </Typography>
+                    <WatchNowButton url={new URL("https://www.youtube.com/playlist?list=PLNXoRRqPgxuiVrGS_Vw9XbAv9bzQF8lW-")} />
                 </Box>
                 <Box style={{position: 'relative'}} sx={{
                     display: 'flex',
