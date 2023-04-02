@@ -1,17 +1,19 @@
-import { Container } from "@mui/material"
+import { Stack, Container } from "@mui/material"
+import { Box } from "@mui/system"
 import Image from "next/image"
-import React from "react"
+import React, { PropsWithChildren } from "react"
 
-interface propTypes {
+type propTypes = {
     src: string, 
     alt: string, 
     position: string,
-    aspect: '4/5' | '1/1' | '16/9'
+    aspect: '4/5' | '1/1' | '16/9' | '5/4',
 }
 
-const ImageCard: React.FC<propTypes> = ({ src, alt, position, aspect }) => {
+const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position, aspect, children }) => {
     return (
-        <Container maxWidth='md' fixed sx={{ position: 'relative', aspectRatio: aspect }}>
+        <Stack maxWidth='md' sx={{ position: 'relative', aspectRatio: aspect }} alignItems='center' justifyContent='center'>
+            <Box zIndex={1}>{children}</Box>
             <Image
                 src={src}
                 alt={alt}
@@ -19,7 +21,7 @@ const ImageCard: React.FC<propTypes> = ({ src, alt, position, aspect }) => {
                 style={{ objectFit: 'cover', objectPosition: position }}
             />
             
-        </Container>
+        </Stack>
         
     )
 }
