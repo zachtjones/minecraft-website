@@ -1,4 +1,4 @@
-import { Card, CardMedia } from "@mui/material"
+import { Card, CardActionArea, CardMedia } from "@mui/material"
 import React, { PropsWithChildren } from "react"
 
 type propTypes = {
@@ -9,7 +9,7 @@ type propTypes = {
     linkTo?: URL;
 }
 
-const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position, aspect, children, linkTo }) => {
+const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position: backgroundPosition, aspect: aspectRatio, children, linkTo }) => {
 
     const handleOnClick = () => {
         if(linkTo){
@@ -17,17 +17,17 @@ const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position,
         }
     }
 
+    const backrgoundCoverStyles = {
+        backgroundImage: `url(${src})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+    }
+
     return (
-        <Card onClick={handleOnClick}>
-            <CardMedia 
-                image={src} 
-                title={alt}  
-                sx={{ aspectRatio: aspect, backgroundPosition: position, cursor: linkTo ? 'pointer' : 'default' }}
-            >
-                <div>
-                    {children}
-                </div>
-            </CardMedia>
+        <Card onClick={handleOnClick} sx={{":hover": linkTo ? {'opacity': '85%'}: undefined}}>
+            <CardActionArea sx={{ aspectRatio, backgroundPosition, cursor: linkTo ? 'pointer' : 'default', ...backrgoundCoverStyles}}>
+                {children}
+            </CardActionArea>
         </Card>
         
     )
