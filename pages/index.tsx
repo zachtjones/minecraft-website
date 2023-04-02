@@ -1,14 +1,24 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Cover from '@/components/sections/Cover'
 import About from '@/components/sections/About'
 import SkyBlock from '@/components/sections/SkyBlock'
 import LetsPlay from '@/components/sections/LetsPlay'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { red } from '@mui/material/colors';
 
 const inter = Inter({ subsets: ['latin'] })
 
-// https://www.youtube.com/@zacari_mc
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: red[500],
+    },
+    secondary: {
+      main: '#222',
+    }
+  }
+})
 
 export default function Home() {
   return (
@@ -20,10 +30,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Cover />
-        <About />
-        <SkyBlock />
-        <LetsPlay />
+        <ThemeProvider theme={theme} >
+          <Cover />
+          <About />
+          <SkyBlock />
+          <LetsPlay />
+        </ThemeProvider>
       </main>
     </>
   )

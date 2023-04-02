@@ -13,7 +13,7 @@ function About() {
         </Box>   
     )
     return (
-        <Box sx={{ backgroundColor: '#222'}}>
+        <Box sx={{ bgcolor: 'secondary.main'}}>
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'row',
@@ -21,12 +21,12 @@ function About() {
                 justifyContent: 'space-between',
                 p: 4
             }}>
-                <Typography variant="h2" color='white'>About Me</Typography>
+                <Typography variant="h2" color='secondary.contrastText'>About Me</Typography>
                 <Box maxWidth="50%">
-                    <Typography variant="body1" component='div' color='white'>
+                    <Typography variant="body1" component='div' color='secondary.contrastText'>
                         Hi! I make videos on YouTube showing cool redstone contraptions, farms, and bases in Minecraft.
                     </Typography>
-                    <Typography variant="body1" component='div' color='white' sx={{ mt: 2 }}>
+                    <Typography variant="body1" component='div' color='secondary.contrastText' sx={{ mt: 2 }}>
                         Currently, I&apos;m working on two series, a survival let&apos;s play and a survival skyblock world.
                     </Typography>
                 </Box>
