@@ -27,7 +27,7 @@ function SkyBlock() {
             }}>
                 <Box>
                     <Typography variant="h6" color='secondary.contrastText'>+ more at</Typography>
-                    <Youtube/>
+                    <Youtube smaller />
                 </Box>
             </Box>
             <Image
@@ -36,7 +36,6 @@ function SkyBlock() {
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'left bottom' }}
             />
-            <Typography variant="h6">hi</Typography>
         </Box>
     )
     return (
