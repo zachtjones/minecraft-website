@@ -23,11 +23,26 @@ const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position:
         backgroundRepeat: 'no-repeat',
     }
 
+    const displayChildrenCenterStyles = {
+        display: 'flex', justifyContent: 'center', alignItems :'center', flexDirection: 'column'
+    }
+
+
     return (
         <Card onClick={handleOnClick} sx={{":hover": linkTo ? {'opacity': '85%'}: undefined}}>
-            <CardActionArea sx={{ aspectRatio, backgroundPosition, cursor: linkTo ? 'pointer' : 'default', ...backrgoundCoverStyles}}>
-                {children}
-            </CardActionArea>
+            {linkTo ? (
+                <CardActionArea sx={{ aspectRatio, backgroundPosition, cursor: linkTo ? 'pointer' : 'default', ...backrgoundCoverStyles, ...displayChildrenCenterStyles}}>
+                    {children}
+                </CardActionArea>
+            ) : (
+                <CardMedia 
+                    image={src} 
+                    title={alt}  
+                    sx={{ aspectRatio, backgroundPosition, ...displayChildrenCenterStyles}}
+                > 
+                    {children} 
+                </CardMedia>
+            )}
         </Card>
         
     )
