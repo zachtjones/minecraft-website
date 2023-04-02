@@ -20,7 +20,7 @@ const LetsPlay: React.FC = () => {
 
             <ImageList cols={ isSmallScreen ? 1 : 3 }>
                 {selectedEpisodes.map((episode) => (
-                    <ImageListItem sx={{ m: 1 }}>
+                    <ImageListItem key={episode.number} sx={{ m: 1 }}>
                         <ImageCard
                             src={`/images/LetsPlay-${episode.number}.png`}
                             alt={episode.name}

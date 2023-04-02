@@ -1,4 +1,4 @@
-import { Grid, InputLabel, MenuItem, Select, SelectChangeEvent, Typography } from "@mui/material"
+import { Button, Grid, InputLabel, MenuItem, Select, SelectChangeEvent, Typography, Link } from "@mui/material"
 import React from "react"
 
 const WorldInformation: React.FC = () => {
@@ -7,6 +7,13 @@ const WorldInformation: React.FC = () => {
     const handleChange = (event: SelectChangeEvent) => {
         setWorld(event.target.value as string);
     };
+
+    const handleDownload = () => {
+        const link = document.createElement("a")
+        link.download = `${world}.zip`
+        link.href = `http://minecraft-world-downloads.s3-website-us-west-1.amazonaws.com/${world}.zip`
+        link.click()
+    }
 
     return (
         <Grid container columns={3} sx={{ m: 5}}>
@@ -55,6 +62,14 @@ const WorldInformation: React.FC = () => {
                     <MenuItem value='skyBlockEpisode4'>SkyBlock (Episode 4)</MenuItem>
                     <MenuItem value='letsPlayEpisode8'>Let's Play (Episode 8)</MenuItem>
                 </Select>
+                <Button variant='contained' sx={{ ml: 1}} onClick={handleDownload}>
+                    Download
+                </Button>
+                <Typography variant='body1'>
+                    All of these worlds are for Java&nbsp;Edition.
+                    <br/>
+                    Play on Bedrock? use <Link target="_blank" href='https://chunker.app/'>Chunker</Link> to convert your world
+                </Typography>
             </Grid>
         </Grid>
     )
