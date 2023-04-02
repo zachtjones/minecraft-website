@@ -4,9 +4,12 @@ import React from "react"
 import ImageCard from "../utilities/ImageCard"
 import useIsSmallScreen from "@/hooks/useIsSmallScreen"
 import WatchNowButton from "../utilities/WatchNowButton"
+import data from '../../data/lets-play'
 
 const LetsPlay: React.FC = () => {
     const isSmallScreen = useIsSmallScreen();
+    const latestEpisodes = data.slice(-3);
+    const selectedEpisodes = data.filter((ep) => [8,7,5].includes(ep.number))
 
     return (
         <Box sx={{ bgcolor: 'secondary.main', p: 3}}>
@@ -16,30 +19,17 @@ const LetsPlay: React.FC = () => {
             </Typography>
 
             <ImageList cols={ isSmallScreen ? 1 : 3 }>
-                <ImageListItem sx={{ m: 1 }}>
-                    <ImageCard
-                        src={`/images/LetsPlay-8.png`}
-                        alt="Minecraft logo"
-                        position='center'
-                        aspect='4/5'
-                    />
-                </ImageListItem>
-                {!isSmallScreen && <ImageListItem sx={{ m: 1 }}>
-                    <ImageCard
-                        src={`/images/LetsPlay-7.png`}
-                        alt="Minecraft logo"
-                        position='95%'
-                        aspect='4/5'
-                    />
-                </ImageListItem>}
-                <ImageListItem sx={{ m: 1 }}>
-                    <ImageCard
-                        src={`/images/LetsPlay-5.png`}
-                        alt="Minecraft logo"
-                        position='87%'
-                        aspect='4/5'
-                    />
-                </ImageListItem>
+                {selectedEpisodes.map((episode) => (
+                    <ImageListItem sx={{ m: 1 }}>
+                        <ImageCard
+                            src={`/images/LetsPlay-${episode.number}.png`}
+                            alt={episode.name}
+                            position={episode.imagePosition || 'center'}
+                            aspect='4/5'
+                            linkTo={new URL(episode.url)}
+                        />
+                    </ImageListItem>
+                ))}
             </ImageList>
             <Stack direction='row' justifyContent='center'>
                 <Typography variant="h6" component='span' color='primary.contrastText'>
