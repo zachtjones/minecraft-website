@@ -5,8 +5,8 @@ import React from "react"
 interface propTypes {
     src: string, 
     alt: string, 
-    position: 'center' | 'right',
-    aspect: '4/5' | '1/1'
+    position: string,
+    aspect: '4/5' | '1/1' | '16/9'
 }
 
 const ImageCard: React.FC<propTypes> = ({ src, alt, position, aspect }) => {

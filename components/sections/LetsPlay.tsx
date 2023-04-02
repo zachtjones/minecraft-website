@@ -33,13 +33,13 @@ const LetsPlay: React.FC = () => {
                 <ImageCard
                     src={`/images/LetsPlay-7.png`}
                     alt="Minecraft logo"
-                    position='right'
+                    position='95%'
                     aspect='4/5'
                 />
                 <ImageCard
                     src={`/images/LetsPlay-5.png`}
                     alt="Minecraft logo"
-                    position='right'
+                    position='87%'
                     aspect='4/5'
                 />
             </Stack>
