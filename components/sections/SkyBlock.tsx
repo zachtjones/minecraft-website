@@ -48,7 +48,7 @@ function SkyBlock() {
             </Stack>
         </Grid>
         <Grid item xs={8}>
-            <Grid item container xs={12}>
+            <Grid item container>
                 {images}
             </Grid>
         </Grid>
