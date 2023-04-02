@@ -32,7 +32,7 @@ function SkyBlock() {
     )
     return (
     <Grid container xs={12} sx={{p:8}}>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
             <Stack direction='column' alignItems='center' sx={{ mt: 4, mr: 4 }} justifyContent='space-around'>
                 <Image
                     src='/images/zacari.png'
@@ -47,7 +47,7 @@ function SkyBlock() {
                 <WatchNowButton url={new URL("https://www.youtube.com/playlist?list=PLNXoRRqPgxuiVrGS_Vw9XbAv9bzQF8lW-")} />
             </Stack>
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={12} md={8}>
             <Grid item container>
                 {images}
             </Grid>
