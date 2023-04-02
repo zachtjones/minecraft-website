@@ -8,7 +8,7 @@ const LATEST_EPISODE = 4
 
 function SkyBlock() {
     const images = [LATEST_EPISODE, LATEST_EPISODE - 1, LATEST_EPISODE - 2].map((number) =>
-       <Grid item xs={6}>
+       <Grid item xs={6} key={number}>
          <ImageCard
             src={`/images/Skyblock-${number}.png`}
             alt={`SkyBlock Episode ${number} Thumbnail`}
@@ -19,7 +19,7 @@ function SkyBlock() {
        </Grid>
     )
     images.push(
-        <Grid item xs={6}>
+        <Grid item xs={6} key='0'>
             <ImageCard
                 src='/images/Skyblock-more.png'
                 alt="SkyBlock there's more"
@@ -32,7 +32,7 @@ function SkyBlock() {
         </Grid>
     )
     return (
-    <Grid container xs={12} sx={{p:8}}>
+    <Grid container sx={{p:8}}>
         <Grid item xs={12} md={4}>
             <Stack direction='column' alignItems='center' sx={{ mt: 4, mr: 4 }} justifyContent='space-around'>
                 <Image

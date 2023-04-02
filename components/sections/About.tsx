@@ -7,7 +7,7 @@ const About: React.FC = () => {
     const isSmallScreen = useIsSmallScreen();
 
     const images = [1,2,3,4].map((number) =>
-        <Grid xs={12} md={6} key={number} sx={{ p: 3 }} style={{ position: 'relative' }}>
+        <Grid item xs={12} md={6} key={number} sx={{ p: 3 }} style={{ position: 'relative' }}>
             <ImageCard
                 src={`/images/about-${number}.png`}
                 alt="Minecraft logo"
@@ -19,11 +19,11 @@ const About: React.FC = () => {
     return (
         <Box sx={{ bgcolor: 'secondary.main', flexGrow: 1, p: 3 }}>
             <Grid container sx={{ p: 2 }}>
-                <Grid xs={12} md={6}>
+                <Grid item xs={12} md={6}>
                     <Typography variant="h2" color='secondary.contrastText' textAlign='center'>About Me</Typography>
                 </Grid>
 
-                <Grid xs={12} md={6} sx={{ pl: 4 }}>
+                <Grid item xs={12} md={6} sx={{ pl: 4 }}>
                     <Typography variant="body1" color='secondary.contrastText'>
                         I make videos on YouTube showing cool redstone contraptions, farms, and bases in Minecraft.
                     </Typography>

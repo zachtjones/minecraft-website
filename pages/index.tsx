@@ -6,6 +6,8 @@ import SkyBlock from '@/components/sections/SkyBlock'
 import LetsPlay from '@/components/sections/LetsPlay'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
+import WorldInformation from '@/components/sections/WorldInformation'
+import Footer from '@/components/sections/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -35,6 +37,8 @@ export default function Home() {
           <About />
           <SkyBlock />
           <LetsPlay />
+          <WorldInformation />
+          <Footer/>
         </ThemeProvider>
       </main>
     </>
