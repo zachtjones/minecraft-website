@@ -1,44 +1,42 @@
-import { Box, Typography } from "@mui/material"
-import Image from "next/image"
+import { Box, Container, Stack, Typography } from "@mui/material"
 import Youtube from "../utilities/Youtube"
+import React from "react"
+import ImageCard from "../utilities/ImageCard"
 
-function LetsPlay() {
-    const images1 = [1,2,3].map((number) =>
-        <Box key={number} style={{ width: 'calc(33.33% - 20px)', aspectRatio: '4/5', position: 'relative' }}>
-            <Image
-                src={`/images/about-${number}.png`}
-                alt="Minecraft logo"
-                fill
-                style={{ objectFit: 'cover' }}
-            />
-        </Box>   
-    )
+const LetsPlay: React.FC = () => {
     return (
         <Box sx={{ bgcolor: 'secondary.main', p: 3}}>
             <Typography variant="h2" color='primary.contrastText' sx={{ m: 1, mt: 3 }}>
                 Let&apos;s Play Series
             </Typography>
 
-            <Box sx={{
-                display: 'flex',
-                flexFlow: 'wrap',
-                justifyContent: 'space-around',
-                p: 3
-            }}>
-                {images1}
-            </Box>
+            <Stack spacing={2} direction={{ sm: 'column', md: 'row'}} sx={{ p: 2 }}>
+                <ImageCard
+                    src={`/images/LetsPlay-8.png`}
+                    alt="Minecraft logo"
+                    position='center'
+                    aspect='4/5'
+                />
+                <ImageCard
+                    src={`/images/LetsPlay-7.png`}
+                    alt="Minecraft logo"
+                    position='right'
+                    aspect='4/5'
+                />
+                <ImageCard
+                    src={`/images/LetsPlay-5.png`}
+                    alt="Minecraft logo"
+                    position='right'
+                    aspect='4/5'
+                />
+            </Stack>
 
-            <Box sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}>
+            <Stack direction='row' justifyContent='center'>
                 <Typography variant="h6" component='span' color='primary.contrastText'>
-                    + more on 
+                        + more on 
                 </Typography>
                 <Youtube smaller />
-            </Box>
-            
+            </Stack>
         </Box>
     )
 }

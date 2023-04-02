@@ -15,7 +15,7 @@ function Youtube(props: { smaller?: Boolean }) {
     }
 
     return (
-        <Link href='https://www.youtube.com/@zacari_mc' style={{ display: 'inline-block'}}>
+        <Link href='https://www.youtube.com/@zacari_mc' target='_blank' style={{ display: 'inline-block'}}>
             <Box sx={{
                 display: 'flex',
                 alignItems: 'center',
