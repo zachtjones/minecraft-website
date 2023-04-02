@@ -13,7 +13,9 @@ type propTypes = {
 const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position, aspect, children }) => {
     return (
         <Card>
-            <CardMedia image={src} title={alt}  sx={{ aspectRatio: aspect, backgroundPosition: position }}/>
+            <CardMedia image={src} title={alt}  sx={{ aspectRatio: aspect, backgroundPosition: position }}>
+                {children}
+            </CardMedia>
         </Card>
         
     )
