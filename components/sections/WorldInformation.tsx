@@ -11,7 +11,7 @@ const WorldInformation: React.FC = () => {
     const handleDownload = () => {
         const link = document.createElement("a")
         link.download = `${world}.zip`
-        link.href = `http://minecraft-world-downloads.s3-website-us-west-1.amazonaws.com/${world}.zip`
+        link.href = `https://d1nafaay9z3hbs.cloudfront.net/${world}.zip`
         link.click()
     }
 
