@@ -15,9 +15,11 @@ const WorldInformation: React.FC = () => {
         link.click()
     }
 
+    const gridItemPadding = 2
+
     return (
         <Grid container columns={3} sx={{ m: 5}}>
-            <Grid item xs={3} md={1}>
+            <Grid item xs={3} md={1} sx={{ p: gridItemPadding }}>
                 <Typography variant='h3' sx={{ mb: 2 }}>
                     World Information
                 </Typography>
@@ -25,7 +27,7 @@ const WorldInformation: React.FC = () => {
                     Want to follow along as I build?
                 </Typography>
             </Grid>
-            <Grid item xs={3} md={1}>
+            <Grid item xs={3} md={1} sx={{ p: gridItemPadding }}>
                 <Typography variant='h4' color='primary.main' sx={{ mb: 1 }}>
                     SkyBlock 
                 </Typography>
@@ -39,7 +41,7 @@ const WorldInformation: React.FC = () => {
                     * You only need this mod if you want to create a new SkyBlock world
                 </Typography>
             </Grid>
-            <Grid item xs={3} md={1}>
+            <Grid item xs={3} md={1} sx={{ p: gridItemPadding }}>
                 <Typography variant='h4' color='primary.main' sx={{ mb: 1 }}>
                     Survival Let's Play
                 </Typography>
@@ -51,8 +53,8 @@ const WorldInformation: React.FC = () => {
                 </Typography>
             </Grid>
             <Grid item xs={3} md={1}></Grid>
-            <Grid item xs={3} md={1}>
-                <Typography variant='h4' color='primary.main' sx={{ mb: 1, mt: 1 }}>
+            <Grid item xs={3} md={1} sx={{ p: gridItemPadding }}>
+                <Typography variant='h4' color='primary.main' sx={{ mb: 1, mt: 4 }}>
                     World Downloads
                 </Typography>
                 <InputLabel id='selectWorld'>Select the world you'd like to download</InputLabel>
