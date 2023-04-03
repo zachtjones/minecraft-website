@@ -43,7 +43,7 @@ const WorldInformation: React.FC = () => {
             </Grid>
             <Grid item xs={3} md={1} sx={{ p: gridItemPadding }}>
                 <Typography variant='h4' color='primary.main' sx={{ mb: 1 }}>
-                    Survival Let's Play
+                    Survival Let&apos;s Play
                 </Typography>
                 <Typography variant='body1'>
                     Seed: -9151561662370742852
@@ -57,7 +57,7 @@ const WorldInformation: React.FC = () => {
                 <Typography variant='h4' color='primary.main' sx={{ mb: 1, mt: 4 }}>
                     World Downloads
                 </Typography>
-                <InputLabel id='selectWorld'>Select the world you'd like to download</InputLabel>
+                <InputLabel id='selectWorld'>Select the world you&apos;d like to download</InputLabel>
                 <Select
                     labelId='selectWorld'
                     id='selectWorld'
@@ -65,7 +65,7 @@ const WorldInformation: React.FC = () => {
                     onChange={handleChange}
                 >
                     <MenuItem value='skyBlockEpisode4'>SkyBlock (Episode 4)</MenuItem>
-                    <MenuItem value='letsPlayEpisode8'>Let's Play (Episode 8)</MenuItem>
+                    <MenuItem value='letsPlayEpisode8'>Let&apos;s Play (Episode 8)</MenuItem>
                 </Select>
                 <Button variant='contained' sx={{ ml: 1}} onClick={handleDownload}>
                     Download
