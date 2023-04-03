@@ -21,7 +21,7 @@ function SkyBlock() {
     images.push(
         <Grid item xs={6} key='0'>
             <ImageCard
-                src='/images/Skyblock-more.png'
+                src='/images/SkyBlock-more.png'
                 alt="SkyBlock there's more"
                 position='center'
                 aspect='5/4'
