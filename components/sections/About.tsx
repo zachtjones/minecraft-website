@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material"
+import { Box, Container, Grid, Typography } from "@mui/material"
 import ImageCard from "../utilities/ImageCard"
 import React from "react"
 import useIsSmallScreen from "../../hooks/useIsSmallScreen";
@@ -18,22 +18,24 @@ const About: React.FC = () => {
     )
     return (
         <Box sx={{ bgcolor: 'secondary.main', flexGrow: 1, p: 3 }}>
-            <Grid container sx={{ p: 2 }}>
-                <Grid item xs={12} md={6}>
-                    <Typography variant="h2" color='secondary.contrastText' textAlign='center'>About Me</Typography>
-                </Grid>
+            <Container maxWidth="xl">
+                <Grid container sx={{ p: 2 }}>
+                    <Grid item xs={12} md={6}>
+                        <Typography variant="h2" color='secondary.contrastText' textAlign='center'>About Me</Typography>
+                    </Grid>
 
-                <Grid item xs={12} md={6} sx={{ pl: 4 }}>
-                    <Typography variant="body1" color='secondary.contrastText'>
-                        I make videos on YouTube showing cool redstone contraptions, farms, and bases in Minecraft.
-                    </Typography>
-                    <Typography variant="body1" color='secondary.contrastText' sx={{ mt: 2 }}>
-                        Currently, I&apos;m working on two series, a survival let&apos;s play and a survival skyblock world.
-                    </Typography>
-                </Grid>
+                    <Grid item xs={12} md={6} sx={{ pl: 4 }}>
+                        <Typography variant="body1" color='secondary.contrastText'>
+                            I make videos on YouTube showing cool redstone contraptions, farms, and bases in Minecraft.
+                        </Typography>
+                        <Typography variant="body1" color='secondary.contrastText' sx={{ mt: 2 }}>
+                            Currently, I&apos;m working on two series, a survival let&apos;s play and a survival skyblock world.
+                        </Typography>
+                    </Grid>
 
-                {isSmallScreen ? [images[1], images[3]] : images}
-            </Grid>
+                    {isSmallScreen ? [images[1], images[3]] : images}
+                </Grid>
+            </Container>
         </Box>
     )
 }

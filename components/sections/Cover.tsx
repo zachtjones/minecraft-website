@@ -4,7 +4,7 @@ import Youtube from '../utilities/Youtube';
 
 function Cover() {
     return (
-        <div style={{ width: '100%', minHeight: '50vh', position: 'relative' }}>
+        <div style={{ width: '100%', minHeight: '100vh', position: 'relative' }}>
             <Image
                 src="/images/minecraft-background.png"
                 alt="Desert background with mountains in the distance"
