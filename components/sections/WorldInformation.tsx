@@ -33,7 +33,10 @@ const WorldInformation: React.FC = () => {
                     Seed: 4351423038790370778
                 </Typography>
                 <Typography variant='body1'>
-                    Mods: Carpet Sky Additions
+                    Mods: <Link target='_blank' href='https://beta.curseforge.com/minecraft/mc-mods/carpet-sky-additions'>Carpet Sky Additions</Link>
+                </Typography>
+                <Typography variant="body1">
+                    * You only need this mod if you want to create a new SkyBlock world
                 </Typography>
             </Grid>
             <Grid item xs={3} md={1}>
