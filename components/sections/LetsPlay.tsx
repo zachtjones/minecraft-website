@@ -31,7 +31,7 @@ const LetsPlay: React.FC = () => {
                         >
                             <Stack direction={"row"} spacing={"5px"} sx={{p: 2, alignItems: 'center'}}>
                                 <Avatar alt="Me" src="/images/zacari.png" />
-                                <Chip label={episode.name} color="primary" size="medium" sx={{borderBottomLeftRadius: "0px"}}/>
+                                <Chip label={episode.name} color="info" size="medium" sx={{borderBottomLeftRadius: "0px"}}/>
                             </Stack>
                         </ImageCard>
                     </ImageListItem>

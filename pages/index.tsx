@@ -5,7 +5,7 @@ import About from '@/components/sections/About'
 import SkyBlock from '@/components/sections/SkyBlock'
 import LetsPlay from '@/components/sections/LetsPlay'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import { grey, red } from '@mui/material/colors';
 import WorldInformation from '@/components/sections/WorldInformation'
 import Footer from '@/components/sections/Footer'
 
@@ -18,6 +18,9 @@ const theme = createTheme({
     },
     secondary: {
       main: '#222',
+    },
+    info: {
+      main: grey[300]
     }
   }
 })
