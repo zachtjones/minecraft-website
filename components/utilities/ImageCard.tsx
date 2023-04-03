@@ -7,10 +7,10 @@ type propTypes = {
     position: string,
     aspect: '4/5' | '1/1' | '16/9' | '5/4',
     linkTo?: URL;
-    customChildStyle?: SxProps; 
+    sx?: SxProps; 
 }
 
-const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position: backgroundPosition, aspect: aspectRatio, children, linkTo, customChildStyle }) => {
+const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position: backgroundPosition, aspect: aspectRatio, children, linkTo, sx }) => {
 
     const handleOnClick = () => {
         if(linkTo){
@@ -25,7 +25,7 @@ const ImageCard: React.FC<PropsWithChildren<propTypes>> = ({ src, alt, position:
     }
 
     const displayChildrenCenterStyles = {
-        ...customChildStyle || { 
+        ...sx || { 
             display: 'flex', justifyContent: 'center', alignItems :'center', flexDirection: 'column' 
         }
     }

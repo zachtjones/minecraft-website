@@ -9,7 +9,7 @@ import useChat from "@/hooks/useChat"
 
 const LetsPlay: React.FC = () => {
     const isSmallScreen = useIsSmallScreen();
-    const latestEpisodes = data.slice(-3);
+    //const latestEpisodes = data.slice(-3);
     const selectedEpisodes = data.filter((ep) => [8,7,5].includes(ep.number))
     const {containerStyles, Chat} = useChat();
 
@@ -29,7 +29,7 @@ const LetsPlay: React.FC = () => {
                             position={episode.imagePosition || 'center'}
                             aspect='4/5'
                             linkTo={new URL(episode.url)}
-                            customChildStyle={{...containerStyles}}
+                            sx={{...containerStyles}}
                         >
                             <Chat label={episode.name} />
                         </ImageCard>
