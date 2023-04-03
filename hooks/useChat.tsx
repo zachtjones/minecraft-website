@@ -4,8 +4,7 @@ const useChat = () => {
    const containerStyles: SxProps = { 
     display: 'flex', 
     justifyContent: 'flex-start', 
-    alignItems :'flex-start', 
-    flexDirection: 'column' 
+    alignItems :'flex-start'
    };
 
    const Chat: React.FC<{label: string}> = ({label}) => (
