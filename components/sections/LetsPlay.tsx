@@ -5,11 +5,13 @@ import ImageCard from "../utilities/ImageCard"
 import useIsSmallScreen from "@/hooks/useIsSmallScreen"
 import WatchNowButton from "../utilities/WatchNowButton"
 import data from '../../data/lets-play'
+import useChat from "@/hooks/useChat"
 
 const LetsPlay: React.FC = () => {
     const isSmallScreen = useIsSmallScreen();
     const latestEpisodes = data.slice(-3);
     const selectedEpisodes = data.filter((ep) => [8,7,5].includes(ep.number))
+    const {containerStyles, Chat} = useChat();
 
     return (
         <Box sx={{ bgcolor: 'secondary.main', p: 3}}>
@@ -27,12 +29,9 @@ const LetsPlay: React.FC = () => {
                             position={episode.imagePosition || 'center'}
                             aspect='4/5'
                             linkTo={new URL(episode.url)}
-                            customChildStyle={{display: 'flex', justifyContent: 'flex-start', alignItems :'flex-start', flexDirection: 'column'}}
+                            customChildStyle={{...containerStyles}}
                         >
-                            <Stack direction={"row"} spacing={"5px"} sx={{p: 2, alignItems: 'center'}}>
-                                <Avatar alt="Me" src="/images/zacari.png" />
-                                <Chip label={episode.name} color="info" size="medium" sx={{borderBottomLeftRadius: "0px"}}/>
-                            </Stack>
+                            <Chat label={episode.name} />
                         </ImageCard>
                     </ImageListItem>
                 ))}
