@@ -2,7 +2,7 @@ import { Button, Grid, InputLabel, MenuItem, Select, SelectChangeEvent, Typograp
 import React from "react"
 
 const WorldInformation: React.FC = () => {
-    const [world, setWorld] = React.useState('skyBlockEpisode4')
+    const [world, setWorld] = React.useState('skyBlockEpisode5')
 
     const handleChange = (event: SelectChangeEvent) => {
         setWorld(event.target.value as string);
@@ -64,7 +64,11 @@ const WorldInformation: React.FC = () => {
                         id='selectWorld'
                         value={world}
                         onChange={handleChange}
+                        sx={{
+                            color: 'gray'
+                        }}
                     >
+                        <MenuItem value='skyBlockEpisode5'>SkyBlock (Episode 5)</MenuItem>
                         <MenuItem value='skyBlockEpisode4'>SkyBlock (Episode 4)</MenuItem>
                         <MenuItem value='letsPlayEpisode8'>Let&apos;s Play (Episode 8)</MenuItem>
                     </Select>
